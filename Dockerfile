@@ -6,6 +6,7 @@ COPY requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt 
 
-COPY main.py . 
+COPY main.py game.py run.sh ./
+RUN chmod +x run.sh
 
-CMD ["python3", "main.py"] 
+CMD ["./run.sh"] 

@@ -8,14 +8,20 @@ print("My name is AmirMohammad.🙃\nIf possible, follow my Github!🤗🤗")
 print(f"My github link: {link}")
 print("================================================================\n\n")
 
-inp = int(input("Do you want to continue? Yes: 1, No: 0\nHa? "))
+try:
+    user = int(input("Do you want to continue? Yes: 1, No: 0\nHa? "))
+except EOFError: 
+    print("Message not received")
 
-if inp == 1: 
+if user == 1: 
     system_number = random.randint(1, 10) 
     score = 5
 
     while True: 
-        user_number = int(input("\nEnter your guess: ")) 
+        try: 
+            user_number = int(input("\nEnter your guess: ")) 
+        except EOFError: 
+            print("Message not recieved")
         
         if user_number == system_number: 
             print("Winner!🎉🎉") 
